@@ -28,7 +28,7 @@ contract UserRegistry {
         addUser:
         używamy calldata dla string:
         - calldata jest tylko do odczytu (immutable)
-        - nie kopiujemy danych do memory → oszczędność gas
+        - nie kopiujemy danych do memory - oszczędność gazu
 
         "Use calldata for external function parameters..."
     */
@@ -52,7 +52,7 @@ contract UserRegistry {
         "Return variables for complex types must use memory."
     */
     function getUsers() public view returns (User[] memory) {
-        return users; // automatyczna kopia storage → memory
+        return users;
     }
     /*
         kopiowanie storage - memory i modyfikacja bez zapisu
